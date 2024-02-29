@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     private CharacterController _characterController;
-    private PlayerAnimationsController _animationsController;
+    private CharacterAnimationsController _animationsController;
     private InputManager _inputManager;
     private Vector3 _movementDirection;
     private Camera _camera;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _animationsController = GetComponent<PlayerAnimationsController>();
+        _animationsController = GetComponent<CharacterAnimationsController>();
         _inputManager = InputManager.Instance;
         _camera = Camera.main;
         _gravityMultiplier = _fallMultiplier;
