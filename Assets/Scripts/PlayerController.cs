@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput + rightRelativeVerticalInput;
         _animationsController.speed = cameraRelativeMovement.sqrMagnitude;
+        _animationsController.movement = new Vector2(_inputManager.MovementInput.x, _inputManager.MovementInput.y);
         cameraRelativeMovement.y = _velocity;
         _characterController.Move(cameraRelativeMovement * (_speed * 0.01f));
     }
